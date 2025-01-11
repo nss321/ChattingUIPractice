@@ -13,6 +13,10 @@
 		115BE02C2D326D0A00173E73 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 115BE02B2D326D0A00173E73 /* Base */; };
 		115BE02E2D326D0B00173E73 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 115BE02D2D326D0B00173E73 /* Assets.xcassets */; };
 		115BE0312D326D0B00173E73 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 115BE0302D326D0B00173E73 /* Base */; };
+		115BE0392D326D4D00173E73 /* ChattingData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115BE0382D326D4D00173E73 /* ChattingData.swift */; };
+		115BE03C2D326DFB00173E73 /* SingleChattingListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115BE03A2D326DFB00173E73 /* SingleChattingListTableViewCell.swift */; };
+		115BE03D2D326DFB00173E73 /* SingleChattingListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 115BE03B2D326DFB00173E73 /* SingleChattingListTableViewCell.xib */; };
+		115BE03F2D327BF100173E73 /* DateFormatManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115BE03E2D327BF100173E73 /* DateFormatManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,10 @@
 		115BE02D2D326D0B00173E73 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		115BE0302D326D0B00173E73 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		115BE0322D326D0B00173E73 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		115BE0382D326D4D00173E73 /* ChattingData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingData.swift; sourceTree = "<group>"; };
+		115BE03A2D326DFB00173E73 /* SingleChattingListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleChattingListTableViewCell.swift; sourceTree = "<group>"; };
+		115BE03B2D326DFB00173E73 /* SingleChattingListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SingleChattingListTableViewCell.xib; sourceTree = "<group>"; };
+		115BE03E2D327BF100173E73 /* DateFormatManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +64,35 @@
 		115BE0232D326D0A00173E73 /* ChattingUIPractice */ = {
 			isa = PBXGroup;
 			children = (
+				115BE0412D328AB500173E73 /* Utility */,
 				115BE0242D326D0A00173E73 /* AppDelegate.swift */,
+				115BE0382D326D4D00173E73 /* ChattingData.swift */,
 				115BE0262D326D0A00173E73 /* SceneDelegate.swift */,
 				115BE0282D326D0A00173E73 /* ViewController.swift */,
+				115BE0402D328AA000173E73 /* Component */,
 				115BE02A2D326D0A00173E73 /* Main.storyboard */,
 				115BE02D2D326D0B00173E73 /* Assets.xcassets */,
 				115BE02F2D326D0B00173E73 /* LaunchScreen.storyboard */,
 				115BE0322D326D0B00173E73 /* Info.plist */,
 			);
 			path = ChattingUIPractice;
+			sourceTree = "<group>";
+		};
+		115BE0402D328AA000173E73 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				115BE03B2D326DFB00173E73 /* SingleChattingListTableViewCell.xib */,
+				115BE03A2D326DFB00173E73 /* SingleChattingListTableViewCell.swift */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
+		115BE0412D328AB500173E73 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				115BE03E2D327BF100173E73 /* DateFormatManager.swift */,
+			);
+			path = Utility;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -128,6 +156,7 @@
 				115BE02E2D326D0B00173E73 /* Assets.xcassets in Resources */,
 				115BE0312D326D0B00173E73 /* Base in Resources */,
 				115BE02C2D326D0A00173E73 /* Base in Resources */,
+				115BE03D2D326DFB00173E73 /* SingleChattingListTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,7 +168,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				115BE0292D326D0A00173E73 /* ViewController.swift in Sources */,
+				115BE0392D326D4D00173E73 /* ChattingData.swift in Sources */,
 				115BE0252D326D0A00173E73 /* AppDelegate.swift in Sources */,
+				115BE03C2D326DFB00173E73 /* SingleChattingListTableViewCell.swift in Sources */,
+				115BE03F2D327BF100173E73 /* DateFormatManager.swift in Sources */,
 				115BE0272D326D0A00173E73 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -295,11 +327,12 @@
 				DEVELOPMENT_TEAM = W43DLLFB4Q;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ChattingUIPractice/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "채팅";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -307,9 +340,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sean.SeSAC.Assignment.ChattingUIPractice;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -323,11 +360,12 @@
 				DEVELOPMENT_TEAM = W43DLLFB4Q;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ChattingUIPractice/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "채팅";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -335,9 +373,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sean.SeSAC.Assignment.ChattingUIPractice;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
