@@ -45,6 +45,10 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         cellHeight
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        let v
+    }
+    
     func configTableView() {
         tableView.delegate = self
         tableView.dataSource = self

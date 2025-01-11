@@ -31,11 +31,11 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2ur-dw-BXG">
-                        <rect key="frame" x="72" y="49" width="174" height="79"/>
+                        <rect key="frame" x="72" y="41" width="174" height="87"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="핫하 일해라 일해 코딩해!!" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZMv-G9-Hyy">
-                        <rect key="frame" x="80" y="57" width="158" height="63"/>
+                        <rect key="frame" x="80" y="49" width="158" height="71"/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -53,7 +53,7 @@
                     <constraint firstItem="kfl-76-BQ9" firstAttribute="top" secondItem="Kas-Jl-ie3" secondAttribute="top" id="7bI-rV-kY9"/>
                     <constraint firstItem="ZMv-G9-Hyy" firstAttribute="top" secondItem="2ur-dw-BXG" secondAttribute="top" constant="8" id="EX6-ew-hTi"/>
                     <constraint firstItem="Kas-Jl-ie3" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="HWY-s4-Gk3"/>
-                    <constraint firstItem="2ur-dw-BXG" firstAttribute="top" secondItem="kfl-76-BQ9" secondAttribute="bottom" constant="12" id="InA-Gz-L5h"/>
+                    <constraint firstItem="2ur-dw-BXG" firstAttribute="top" secondItem="kfl-76-BQ9" secondAttribute="bottom" constant="4" id="InA-Gz-L5h"/>
                     <constraint firstAttribute="bottom" secondItem="TQS-YQ-fJm" secondAttribute="bottom" constant="16" id="LPU-PQ-Tyi"/>
                     <constraint firstItem="TQS-YQ-fJm" firstAttribute="leading" secondItem="2ur-dw-BXG" secondAttribute="trailing" constant="12" id="MRC-yd-ftd"/>
                     <constraint firstAttribute="trailing" secondItem="TQS-YQ-fJm" secondAttribute="trailing" constant="16" id="OZh-At-BuT"/>

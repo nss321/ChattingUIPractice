@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23077.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="iwO-1z-lV3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23077.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xkd-RF-5Dv">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23068.1"/>
@@ -84,14 +84,21 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="TsU-8S-0M6">
-                                <rect key="frame" x="0.0" y="60" width="393" height="698"/>
+                                <rect key="frame" x="0.0" y="60" width="393" height="694"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="채팅 정보를 불러오는데 실패했어요 ;_;" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="YtD-nh-vZu">
+                                <rect key="frame" x="0.0" y="404" width="393" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6F8-ZR-de5"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="S7O-fR-fFm" firstAttribute="top" secondItem="TsU-8S-0M6" secondAttribute="bottom" id="1UH-rJ-Gzi"/>
+                            <constraint firstItem="S7O-fR-fFm" firstAttribute="top" secondItem="TsU-8S-0M6" secondAttribute="bottom" constant="4" id="1UH-rJ-Gzi"/>
                             <constraint firstItem="v6F-qm-OQY" firstAttribute="leading" secondItem="6F8-ZR-de5" secondAttribute="leading" id="AA1-SR-1WJ"/>
                             <constraint firstItem="v6F-qm-OQY" firstAttribute="top" secondItem="6F8-ZR-de5" secondAttribute="top" id="GaV-3i-Td1"/>
                             <constraint firstItem="TsU-8S-0M6" firstAttribute="leading" secondItem="6F8-ZR-de5" secondAttribute="leading" id="O4H-SM-hkR"/>
@@ -104,6 +111,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="failureLabel" destination="YtD-nh-vZu" id="MEx-qT-FXL"/>
                         <outlet property="tableView" destination="TsU-8S-0M6" id="dIA-8H-xHX"/>
                         <outlet property="textField" destination="S7O-fR-fFm" id="zEd-pN-CQ4"/>
                     </connections>

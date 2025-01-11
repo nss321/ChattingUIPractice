@@ -11,6 +11,41 @@ final class ChattingViewController: UIViewController {
 
     var _chatRoom: ChatRoom?
     
+//    var chatRoom: ChatRoom {
+//        if let _chatRoom {
+//            return _chatRoom
+//        } else {
+//            print("failed to load chatroom")
+//            return ChatRoom(chatroomId: 4,
+//                            chatroomImage: [User.bran.profileImage],
+//                            chatroomName: User.bran.rawValue,
+//                            chatList: [
+//                               Chat(user: .bran,
+//                                    date: "2025-01-11 21:10",
+//                                    message: "저번 과제 잘 봤습니다!!\n저번 과제에서 이러쿵 저러쿵 부분을 개선해볼 수 있을 것 같은데,\n그 부분까지 개선하셔서 다시 푸쉬해주실 수 있으시겠죠?\n설마 못한다고는 하지 않으시겠죠?"),
+//                               Chat(user: .user,
+//                                    date: "2025-01-12 11:12",
+//                                    message: "브랜님! 다름 아니라 제가 어제 저녁에 쪼오오오끔 피곤해서 자느라 다 못했습니다...!"),
+//                               Chat(user: .bran,
+//                                    date: "2025-01-12 11:30",
+//                                    message: "보고체계 진행하도록 하겠습니다. 수고하세요."),
+//                               Chat(user: .user,
+//                                    date: "2025-01-12 11:31",
+//                                    message: "한번만 봐주세요.. 다음부터는 다 제출할게요 ㅠㅠㅠ"),
+//                               Chat(user: .bran,
+//                                    date: "2025-01-12 11:32",
+//                                    message: "안됩니다."),
+//                               Chat(user: .user,
+//                                    date: "2025-01-12 16:30",
+//                                    message: "예외처리로 한번만 봐주시면 안되나요...?"),
+//                               Chat(user: .bran,
+//                                    date: "2025-01-12 19:30",
+//                                    message: "개발자는 예외처리를 싫어합니다."),
+//                            ])
+//        }
+//    }
+//    
+    
     var chatRoom: ChatRoom {
         if let _chatRoom {
             return _chatRoom
@@ -20,11 +55,13 @@ final class ChattingViewController: UIViewController {
         }
     }
     
+    @IBOutlet var failureLabel: UILabel!
     @IBOutlet var tableView: UITableView!
     @IBOutlet var textField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        failureLabel.isHidden = true
         configTableView()
         configTextField()
         self.navigationItem.title = chatRoom.chatroomName
@@ -38,7 +75,7 @@ final class ChattingViewController: UIViewController {
         
         var config = UIButton.Configuration.plain()
         let image = UIImage(systemName: "arrowtriangle.right")
-        config.image = image
+        config.image = image?.withTintColor(.secondaryLabel, renderingMode: .alwaysOriginal)
         config.baseBackgroundColor = .clear
         let rightButton = UIButton(
             configuration: config,
@@ -48,8 +85,8 @@ final class ChattingViewController: UIViewController {
         textField.rightViewMode = .always
         textField.rightView = rightButton
         
-        textField.attributedText = NSAttributedString(string: "메세지를 입력하세요.", attributes: [.foregroundColor : UIColor.label])
-        textField.backgroundColor = .secondaryLabel
+        textField.attributedPlaceholder = NSAttributedString(string: "메세지를 입력하세요.", attributes: [.foregroundColor : UIColor.secondaryLabel])
+        textField.backgroundColor = .quaternaryLabel
         textField.clipsToBounds = true
         textField.layer.cornerRadius = 8
     }
@@ -82,12 +119,17 @@ extension ChattingViewController: UITableViewDelegate, UITableViewDataSource {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.separatorStyle = .none
-        tableView.register(UINib(nibName: SingleChattingListTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: SingleChattingListTableViewCell.identifier)
+        tableView.register(UINib(nibName: OthersChatBubbleTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: OthersChatBubbleTableViewCell.identifier)
         if chatRoom.chatroomId == -1 {
-            let emptyLabel = UILabel()
-            emptyLabel.text = "채팅 정보를 불러오는데 실패했어요 ;_;"
-            tableView.backgroundColor = .gray
-            tableView.addSubview(emptyLabel)
+            print(#function)
+//            let emptyLabel = UILabel()
+//            emptyLabel.text = "채팅 정보를 불러오는데 실패했어요 ;_;"
+//            tableView.backgroundColor = .gray
+//            tableView.addSubview(emptyLabel)
+            view.backgroundColor = .systemGray6
+            tableView.isHidden = true
+            failureLabel.isHidden = false
+            textField.isEnabled = false
         } else {
         }
     }
