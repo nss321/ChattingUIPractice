@@ -46,7 +46,9 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let v
+        let vc = storyboard?.instantiateViewController(identifier: "ChattingViewController") as! ChattingViewController
+        vc.chatRoom = chattingList[indexPath.row]
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     func configTableView() {

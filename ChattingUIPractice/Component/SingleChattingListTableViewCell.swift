@@ -38,8 +38,8 @@ final class SingleChattingListTableViewCell: UITableViewCell {
             return
         }
         profileImage.image = profile
-        latestMessageLabel.text = row.chatroomName
-        nameLabel.text = row.chatList.last?.message
+        latestMessageLabel.text = row.chatList.last?.message
+        nameLabel.text = row.chatroomName 
         dateLabel.text = DateFormatManager.shared.convertChatdateToDisplaydate(date: row.chatList.last?.date ?? "")
         chatroomId = row.chatroomId
     }

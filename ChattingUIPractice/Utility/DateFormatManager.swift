@@ -33,7 +33,8 @@ class DateFormatManager {
     
     private let convertToTime: DateFormatter = {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yy.MM.dd"
+        dateFormatter.locale = Locale(identifier: "ko_KR")
+        dateFormatter.dateFormat = "hh:mm aa"
         return dateFormatter
     }()
     

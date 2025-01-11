@@ -47,11 +47,16 @@ final class ChattingViewController: UIViewController {
 //    
     
     var chatRoom: ChatRoom {
-        if let _chatRoom {
-            return _chatRoom
-        } else {
-            print("failed to load chatroom")
-            return ChatRoom(chatroomId: -1, chatroomImage: [], chatroomName: "")
+        get {
+            if let _chatRoom {
+                return _chatRoom
+            } else {
+                print("failed to load chatroom")
+                return ChatRoom(chatroomId: -1, chatroomImage: [], chatroomName: "")
+            }
+        }
+        set {
+            _chatRoom = newValue
         }
     }
     
@@ -64,8 +69,13 @@ final class ChattingViewController: UIViewController {
         failureLabel.isHidden = true
         configTableView()
         configTextField()
+        setNavigationBar()
+    }
+    
+    func setNavigationBar() {
+        let buttonImage = UIImage(systemName: "chevron.left")?.withTintColor(.black, renderingMode: .alwaysOriginal)
         self.navigationItem.title = chatRoom.chatroomName
-        // Do any additional setup after loading the view.
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: buttonImage, style: .plain, target: self, action: #selector(backButtonTapped))
     }
     
     func configTextField() {
@@ -94,6 +104,10 @@ final class ChattingViewController: UIViewController {
     func sendButtonTapped() {
         print(textField.text!)
         textField.text = ""
+    }
+    
+    @objc func backButtonTapped(_ sender: UIBarButtonItem) {
+        navigationController?.popViewController(animated: true)
     }
 }
 
