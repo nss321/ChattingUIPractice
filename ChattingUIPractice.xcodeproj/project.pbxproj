@@ -17,6 +17,9 @@
 		115BE03C2D326DFB00173E73 /* SingleChattingListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115BE03A2D326DFB00173E73 /* SingleChattingListTableViewCell.swift */; };
 		115BE03D2D326DFB00173E73 /* SingleChattingListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 115BE03B2D326DFB00173E73 /* SingleChattingListTableViewCell.xib */; };
 		115BE03F2D327BF100173E73 /* DateFormatManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115BE03E2D327BF100173E73 /* DateFormatManager.swift */; };
+		115BE0462D328D0800173E73 /* OthersChatBubbleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115BE0442D328D0800173E73 /* OthersChatBubbleTableViewCell.swift */; };
+		115BE0472D328D0800173E73 /* OthersChatBubbleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 115BE0452D328D0800173E73 /* OthersChatBubbleTableViewCell.xib */; };
+		115BE04A2D328D2A00173E73 /* ChattingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115BE0492D328D2A00173E73 /* ChattingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +35,9 @@
 		115BE03A2D326DFB00173E73 /* SingleChattingListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleChattingListTableViewCell.swift; sourceTree = "<group>"; };
 		115BE03B2D326DFB00173E73 /* SingleChattingListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SingleChattingListTableViewCell.xib; sourceTree = "<group>"; };
 		115BE03E2D327BF100173E73 /* DateFormatManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatManager.swift; sourceTree = "<group>"; };
+		115BE0442D328D0800173E73 /* OthersChatBubbleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OthersChatBubbleTableViewCell.swift; sourceTree = "<group>"; };
+		115BE0452D328D0800173E73 /* OthersChatBubbleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OthersChatBubbleTableViewCell.xib; sourceTree = "<group>"; };
+		115BE0492D328D2A00173E73 /* ChattingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,16 +70,16 @@
 		115BE0232D326D0A00173E73 /* ChattingUIPractice */ = {
 			isa = PBXGroup;
 			children = (
+				115BE0432D328C9D00173E73 /* ViewController */,
+				115BE0422D328C7900173E73 /* Model */,
 				115BE0412D328AB500173E73 /* Utility */,
-				115BE0242D326D0A00173E73 /* AppDelegate.swift */,
-				115BE0382D326D4D00173E73 /* ChattingData.swift */,
-				115BE0262D326D0A00173E73 /* SceneDelegate.swift */,
-				115BE0282D326D0A00173E73 /* ViewController.swift */,
 				115BE0402D328AA000173E73 /* Component */,
 				115BE02A2D326D0A00173E73 /* Main.storyboard */,
-				115BE02D2D326D0B00173E73 /* Assets.xcassets */,
 				115BE02F2D326D0B00173E73 /* LaunchScreen.storyboard */,
+				115BE0242D326D0A00173E73 /* AppDelegate.swift */,
+				115BE0262D326D0A00173E73 /* SceneDelegate.swift */,
 				115BE0322D326D0B00173E73 /* Info.plist */,
+				115BE02D2D326D0B00173E73 /* Assets.xcassets */,
 			);
 			path = ChattingUIPractice;
 			sourceTree = "<group>";
@@ -83,6 +89,8 @@
 			children = (
 				115BE03B2D326DFB00173E73 /* SingleChattingListTableViewCell.xib */,
 				115BE03A2D326DFB00173E73 /* SingleChattingListTableViewCell.swift */,
+				115BE0442D328D0800173E73 /* OthersChatBubbleTableViewCell.swift */,
+				115BE0452D328D0800173E73 /* OthersChatBubbleTableViewCell.xib */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -93,6 +101,23 @@
 				115BE03E2D327BF100173E73 /* DateFormatManager.swift */,
 			);
 			path = Utility;
+			sourceTree = "<group>";
+		};
+		115BE0422D328C7900173E73 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				115BE0382D326D4D00173E73 /* ChattingData.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		115BE0432D328C9D00173E73 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				115BE0282D326D0A00173E73 /* ViewController.swift */,
+				115BE0492D328D2A00173E73 /* ChattingViewController.swift */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -156,6 +181,7 @@
 				115BE02E2D326D0B00173E73 /* Assets.xcassets in Resources */,
 				115BE0312D326D0B00173E73 /* Base in Resources */,
 				115BE02C2D326D0A00173E73 /* Base in Resources */,
+				115BE0472D328D0800173E73 /* OthersChatBubbleTableViewCell.xib in Resources */,
 				115BE03D2D326DFB00173E73 /* SingleChattingListTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -168,8 +194,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				115BE0292D326D0A00173E73 /* ViewController.swift in Sources */,
+				115BE0462D328D0800173E73 /* OthersChatBubbleTableViewCell.swift in Sources */,
 				115BE0392D326D4D00173E73 /* ChattingData.swift in Sources */,
 				115BE0252D326D0A00173E73 /* AppDelegate.swift in Sources */,
+				115BE04A2D328D2A00173E73 /* ChattingViewController.swift in Sources */,
 				115BE03C2D326DFB00173E73 /* SingleChattingListTableViewCell.swift in Sources */,
 				115BE03F2D327BF100173E73 /* DateFormatManager.swift in Sources */,
 				115BE0272D326D0A00173E73 /* SceneDelegate.swift in Sources */,

@@ -31,12 +31,25 @@ class DateFormatManager {
         return dateFormatter
     }()
     
+    private let convertToTime: DateFormatter = {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yy.MM.dd"
+        return dateFormatter
+    }()
+    
     func convertChatdateToDisplaydate(date: String) -> String {
         guard let rawDate = converChatDate.date(from: date) else {
             print("날짜 변환 실패")
             return "00.00.00"
         }
-        
         return convertToDisplayDate.string(from: rawDate)
+    }
+    
+    func convertChatdateToTime(date: String) -> String {
+        guard let rawDate = converChatDate.date(from: date) else {
+            print("시간 변환 실패")
+            return "00:00 오전"
+        }
+        return convertToTime.string(from: rawDate)
     }
 }

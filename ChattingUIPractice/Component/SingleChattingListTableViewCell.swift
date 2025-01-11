@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SingleChattingListTableViewCell: UITableViewCell {
+final class SingleChattingListTableViewCell: UITableViewCell {
 
     static let identifier = "SingleChattingListTableViewCell"
     static let dateFormatter = DateFormatter()
