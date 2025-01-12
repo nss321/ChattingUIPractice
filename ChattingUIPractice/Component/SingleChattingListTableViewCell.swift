@@ -7,10 +7,10 @@
 
 import UIKit
 
-final class SingleChattingListTableViewCell: UITableViewCell {
+final class SingleChattingListTableViewCell: UITableViewCell, ReusableViewProtocol {
 
     static let identifier = "SingleChattingListTableViewCell"
-    static let dateFormatter = DateFormatter()
+    
     @IBOutlet var profileImage: UIImageView!
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var latestMessageLabel: UILabel!
@@ -19,13 +19,11 @@ final class SingleChattingListTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        profileImage.clipsToBounds = true
-        profileImage.contentMode = .scaleAspectFill
-        
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
+    func setupCell() {
+        profileImage.clipsToBounds = true
+        profileImage.contentMode = .scaleAspectFill
     }
     
     func config(row: ChatRoom) {

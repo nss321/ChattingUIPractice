@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, ViewPresenstableProtocol {
     
     @IBOutlet var searchBar: UISearchBar!
     @IBOutlet var tableView: UITableView!
@@ -21,8 +21,6 @@ class ViewController: UIViewController {
         configTableView()
         configSearchBar()
     }
-
-
 }
 
 // MARK: TableView Delegate

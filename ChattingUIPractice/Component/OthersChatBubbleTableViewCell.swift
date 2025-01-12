@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class OthersChatBubbleTableViewCell: UITableViewCell {
+final class OthersChatBubbleTableViewCell: UITableViewCell, ReusableViewProtocol {
     
     static let identifier = "OthersChatBubbleTableViewCell"
     

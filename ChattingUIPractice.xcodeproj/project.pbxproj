@@ -20,6 +20,8 @@
 		115BE0462D328D0800173E73 /* OthersChatBubbleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115BE0442D328D0800173E73 /* OthersChatBubbleTableViewCell.swift */; };
 		115BE0472D328D0800173E73 /* OthersChatBubbleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 115BE0452D328D0800173E73 /* OthersChatBubbleTableViewCell.xib */; };
 		115BE04A2D328D2A00173E73 /* ChattingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115BE0492D328D2A00173E73 /* ChattingViewController.swift */; };
+		11B76E6D2D33A43300BCE282 /* ViewPresenstableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B76E6C2D33A42A00BCE282 /* ViewPresenstableProtocol.swift */; };
+		11B76E6F2D33A8BE00BCE282 /* ReusableViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B76E6E2D33A8B800BCE282 /* ReusableViewProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,8 @@
 		115BE0442D328D0800173E73 /* OthersChatBubbleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OthersChatBubbleTableViewCell.swift; sourceTree = "<group>"; };
 		115BE0452D328D0800173E73 /* OthersChatBubbleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OthersChatBubbleTableViewCell.xib; sourceTree = "<group>"; };
 		115BE0492D328D2A00173E73 /* ChattingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingViewController.swift; sourceTree = "<group>"; };
+		11B76E6C2D33A42A00BCE282 /* ViewPresenstableProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewPresenstableProtocol.swift; sourceTree = "<group>"; };
+		11B76E6E2D33A8B800BCE282 /* ReusableViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableViewProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +74,8 @@
 		115BE0232D326D0A00173E73 /* ChattingUIPractice */ = {
 			isa = PBXGroup;
 			children = (
+				11B76E6E2D33A8B800BCE282 /* ReusableViewProtocol.swift */,
+				11B76E6C2D33A42A00BCE282 /* ViewPresenstableProtocol.swift */,
 				115BE0432D328C9D00173E73 /* ViewController */,
 				115BE0422D328C7900173E73 /* Model */,
 				115BE0412D328AB500173E73 /* Utility */,
@@ -196,9 +202,11 @@
 				115BE0292D326D0A00173E73 /* ViewController.swift in Sources */,
 				115BE0462D328D0800173E73 /* OthersChatBubbleTableViewCell.swift in Sources */,
 				115BE0392D326D4D00173E73 /* ChattingData.swift in Sources */,
+				11B76E6D2D33A43300BCE282 /* ViewPresenstableProtocol.swift in Sources */,
 				115BE0252D326D0A00173E73 /* AppDelegate.swift in Sources */,
 				115BE04A2D328D2A00173E73 /* ChattingViewController.swift in Sources */,
 				115BE03C2D326DFB00173E73 /* SingleChattingListTableViewCell.swift in Sources */,
+				11B76E6F2D33A8BE00BCE282 /* ReusableViewProtocol.swift in Sources */,
 				115BE03F2D327BF100173E73 /* DateFormatManager.swift in Sources */,
 				115BE0272D326D0A00173E73 /* SceneDelegate.swift in Sources */,
 			);

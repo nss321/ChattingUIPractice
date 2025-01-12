@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class ChattingViewController: UIViewController {
+final class ChattingViewController: UIViewController, ViewPresenstableProtocol {
 
     var _chatRoom: ChatRoom?
     
@@ -69,10 +69,10 @@ final class ChattingViewController: UIViewController {
         failureLabel.isHidden = true
         configTableView()
         configTextField()
-        setNavigationBar()
+        configNavigationBar()
     }
     
-    func setNavigationBar() {
+    func configNavigationBar() {
         let buttonImage = UIImage(systemName: "chevron.left")?.withTintColor(.black, renderingMode: .alwaysOriginal)
         self.navigationItem.title = chatRoom.chatroomName
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: buttonImage, style: .plain, target: self, action: #selector(backButtonTapped))
