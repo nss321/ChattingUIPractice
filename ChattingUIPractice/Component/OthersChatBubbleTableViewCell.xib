@@ -31,17 +31,17 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2ur-dw-BXG">
-                        <rect key="frame" x="72" y="41" width="174" height="87"/>
+                        <rect key="frame" x="71.999999999999986" y="41" width="166.66666666666663" height="87"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="핫하 일해라 일해 코딩해!!" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZMv-G9-Hyy">
-                        <rect key="frame" x="80" y="49" width="158" height="71"/>
+                        <rect key="frame" x="79.999999999999986" y="49" width="150.66666666666663" height="71"/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="10:33 오전" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TQS-YQ-fJm">
-                        <rect key="frame" x="258" y="113.66666666666667" width="56" height="14.333333333333329"/>
+                        <rect key="frame" x="250.66666666666663" y="113.66666666666667" width="56" height="14.333333333333329"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <color key="textColor" systemColor="secondaryLabelColor"/>
                         <nil key="highlightedColor"/>
@@ -56,7 +56,7 @@
                     <constraint firstItem="2ur-dw-BXG" firstAttribute="top" secondItem="kfl-76-BQ9" secondAttribute="bottom" constant="4" id="InA-Gz-L5h"/>
                     <constraint firstAttribute="bottom" secondItem="TQS-YQ-fJm" secondAttribute="bottom" constant="16" id="LPU-PQ-Tyi"/>
                     <constraint firstItem="TQS-YQ-fJm" firstAttribute="leading" secondItem="2ur-dw-BXG" secondAttribute="trailing" constant="12" id="MRC-yd-ftd"/>
-                    <constraint firstAttribute="trailing" secondItem="TQS-YQ-fJm" secondAttribute="trailing" constant="16" id="OZh-At-BuT"/>
+                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="TQS-YQ-fJm" secondAttribute="trailing" constant="16" id="OZh-At-BuT"/>
                     <constraint firstItem="ZMv-G9-Hyy" firstAttribute="leading" secondItem="2ur-dw-BXG" secondAttribute="leading" constant="8" id="QmJ-Tx-P2R"/>
                     <constraint firstItem="ZMv-G9-Hyy" firstAttribute="trailing" secondItem="2ur-dw-BXG" secondAttribute="trailing" constant="-8" id="UUK-3a-ASi"/>
                     <constraint firstItem="Kas-Jl-ie3" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="ZGl-w4-DpI"/>

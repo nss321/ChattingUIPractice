@@ -118,11 +118,18 @@ extension ChattingViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let row = chatRoom.chatList[indexPath.row]
-        let cell = tableView.dequeueReusableCell(withIdentifier: OthersChatBubbleTableViewCell.identifier, for: indexPath) as! OthersChatBubbleTableViewCell
         
-        cell.config(row: row)
-        
-        return cell
+        switch row.user {
+        case .user:
+            let cell = tableView.dequeueReusableCell(withIdentifier: MyChatBubbleTableViewCell.identifier, for: indexPath) as! MyChatBubbleTableViewCell
+            cell.config(row: row)
+            return cell
+        default:
+            let cell = tableView.dequeueReusableCell(withIdentifier: OthersChatBubbleTableViewCell.identifier, for: indexPath) as! OthersChatBubbleTableViewCell
+            cell.config(row: row)
+            return cell
+        }
+
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -134,6 +141,7 @@ extension ChattingViewController: UITableViewDelegate, UITableViewDataSource {
         tableView.dataSource = self
         tableView.separatorStyle = .none
         tableView.register(UINib(nibName: OthersChatBubbleTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: OthersChatBubbleTableViewCell.identifier)
+        tableView.register(UINib(nibName: MyChatBubbleTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: MyChatBubbleTableViewCell.identifier)
         if chatRoom.chatroomId == -1 {
             print(#function)
 //            let emptyLabel = UILabel()
