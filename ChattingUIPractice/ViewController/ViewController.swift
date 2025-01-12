@@ -16,66 +16,133 @@ class ViewController: UIViewController, ViewPresenstableProtocol {
     
     let cellHeight: CGFloat = 80
     
+    var searchingResult: [ChatRoom] = [] {
+        didSet {
+            tableView.reloadData()
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configTableView()
         configSearchBar()
+    }
+    
+    func searchingKeyword(targetList list: [ChatRoom], forWhat item: String) {
+        searchingResult.removeAll()
+        print("current: \(item)")
+        chattingList.forEach {
+            if "\($0.chatroomImage)".lowercased().contains(item.lowercased()) {
+                print("matched keyword: \(item)")
+                searchingResult.append($0)
+            }
+        }
     }
 }
 
 // MARK: TableView Delegate
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        mockChatList.count
+        searchBar.searchTextField.isEditing ? searchingResult.count : mockChatList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let row = chattingList[indexPath.row]
+        var row = chattingList[indexPath.row]
         
-        switch row.chatroomImage.count {
-        case 0:
-            print("0명")
-            let cell = tableView.dequeueReusableCell(withIdentifier: SingleChattingListTableViewCell.identifier, for: indexPath) as! SingleChattingListTableViewCell
-            cell.config(row: row)
-            cell.profileImage.layer.cornerRadius = (cellHeight - 24) / 2
-            return cell
-        case 1:
-            print("2명")
-            let cell = tableView.dequeueReusableCell(withIdentifier: SingleChattingListTableViewCell.identifier, for: indexPath) as! SingleChattingListTableViewCell
-            cell.config(row: row)
-            cell.profileImage.layer.cornerRadius = (cellHeight - 24) / 2
-            return cell
-        case 2:
-            print("3명")
-            let cell = tableView.dequeueReusableCell(withIdentifier: ThreePeopleTableViewCell.identifier, for: indexPath) as! ThreePeopleTableViewCell
-            cell.config(row: row)
-            cell.firstProfileImageView.layer.cornerRadius = (cellHeight - 44) / 2
-            cell.secondProfileImageView.layer.cornerRadius = (cellHeight - 44) / 2
-            return cell
-        case 3:
-            print("4명")
-            let cell = tableView.dequeueReusableCell(withIdentifier: FourPeopleTableViewCell.identifier, for: indexPath) as! FourPeopleTableViewCell
-            cell.config(row: row)
-            cell.firstProfileImageView.layer.cornerRadius = (cellHeight - 48) / 2
-            cell.secondProfileImageView.layer.cornerRadius = (cellHeight - 48) / 2
-            cell.thirdProfileImageView.layer.cornerRadius = (cellHeight - 48) / 2
-            return cell
-        case 4:
-            print("5명 이상")
-            let cell = tableView.dequeueReusableCell(withIdentifier: FiveMoreTableViewCell.identifier, for: indexPath) as! FiveMoreTableViewCell
-            cell.config(row: row)
-            cell.firstProfileImageView.layer.cornerRadius = (cellHeight - 52) / 2
-            cell.secondProfileImageView.layer.cornerRadius = (cellHeight - 52) / 2
-            cell.thirdProfileImageView.layer.cornerRadius = (cellHeight - 52) / 2
-            cell.fourthProfileImageView.layer.cornerRadius = (cellHeight - 52) / 2
-            return cell
-        default :
-            print("디폴트")
-            let cell = tableView.dequeueReusableCell(withIdentifier: SingleChattingListTableViewCell.identifier, for: indexPath) as! SingleChattingListTableViewCell
-            cell.config(row: row)
-            cell.profileImage.layer.cornerRadius = (cellHeight - 24) / 2
-            return cell
+        if searchBar.searchTextField.isEditing {
+            row = searchingResult[indexPath.row]
+            switch row.chatroomImage.count {
+            case 0:
+                print("0명")
+                let cell = tableView.dequeueReusableCell(withIdentifier: SingleChattingListTableViewCell.identifier, for: indexPath) as! SingleChattingListTableViewCell
+                cell.config(row: row)
+                cell.profileImage.layer.cornerRadius = (cellHeight - 24) / 2
+                return cell
+            case 1:
+                print("2명")
+                let cell = tableView.dequeueReusableCell(withIdentifier: SingleChattingListTableViewCell.identifier, for: indexPath) as! SingleChattingListTableViewCell
+                cell.config(row: row)
+                cell.profileImage.layer.cornerRadius = (cellHeight - 24) / 2
+                return cell
+            case 2:
+                print("3명")
+                let cell = tableView.dequeueReusableCell(withIdentifier: ThreePeopleTableViewCell.identifier, for: indexPath) as! ThreePeopleTableViewCell
+                cell.config(row: row)
+                cell.firstProfileImageView.layer.cornerRadius = (cellHeight - 44) / 2
+                cell.secondProfileImageView.layer.cornerRadius = (cellHeight - 44) / 2
+                return cell
+            case 3:
+                print("4명")
+                let cell = tableView.dequeueReusableCell(withIdentifier: FourPeopleTableViewCell.identifier, for: indexPath) as! FourPeopleTableViewCell
+                cell.config(row: row)
+                cell.firstProfileImageView.layer.cornerRadius = (cellHeight - 48) / 2
+                cell.secondProfileImageView.layer.cornerRadius = (cellHeight - 48) / 2
+                cell.thirdProfileImageView.layer.cornerRadius = (cellHeight - 48) / 2
+                return cell
+            case 4:
+                print("5명 이상")
+                let cell = tableView.dequeueReusableCell(withIdentifier: FiveMoreTableViewCell.identifier, for: indexPath) as! FiveMoreTableViewCell
+                cell.config(row: row)
+                cell.firstProfileImageView.layer.cornerRadius = (cellHeight - 52) / 2
+                cell.secondProfileImageView.layer.cornerRadius = (cellHeight - 52) / 2
+                cell.thirdProfileImageView.layer.cornerRadius = (cellHeight - 52) / 2
+                cell.fourthProfileImageView.layer.cornerRadius = (cellHeight - 52) / 2
+                return cell
+            default :
+                print("디폴트")
+                let cell = tableView.dequeueReusableCell(withIdentifier: SingleChattingListTableViewCell.identifier, for: indexPath) as! SingleChattingListTableViewCell
+                cell.config(row: row)
+                cell.profileImage.layer.cornerRadius = (cellHeight - 24) / 2
+                return cell
+            }
+        } else {
+            switch row.chatroomImage.count {
+            case 0:
+                print("0명")
+                let cell = tableView.dequeueReusableCell(withIdentifier: SingleChattingListTableViewCell.identifier, for: indexPath) as! SingleChattingListTableViewCell
+                cell.config(row: row)
+                cell.profileImage.layer.cornerRadius = (cellHeight - 24) / 2
+                return cell
+            case 1:
+                print("2명")
+                let cell = tableView.dequeueReusableCell(withIdentifier: SingleChattingListTableViewCell.identifier, for: indexPath) as! SingleChattingListTableViewCell
+                cell.config(row: row)
+                cell.profileImage.layer.cornerRadius = (cellHeight - 24) / 2
+                return cell
+            case 2:
+                print("3명")
+                let cell = tableView.dequeueReusableCell(withIdentifier: ThreePeopleTableViewCell.identifier, for: indexPath) as! ThreePeopleTableViewCell
+                cell.config(row: row)
+                cell.firstProfileImageView.layer.cornerRadius = (cellHeight - 44) / 2
+                cell.secondProfileImageView.layer.cornerRadius = (cellHeight - 44) / 2
+                return cell
+            case 3:
+                print("4명")
+                let cell = tableView.dequeueReusableCell(withIdentifier: FourPeopleTableViewCell.identifier, for: indexPath) as! FourPeopleTableViewCell
+                cell.config(row: row)
+                cell.firstProfileImageView.layer.cornerRadius = (cellHeight - 48) / 2
+                cell.secondProfileImageView.layer.cornerRadius = (cellHeight - 48) / 2
+                cell.thirdProfileImageView.layer.cornerRadius = (cellHeight - 48) / 2
+                return cell
+            case 4:
+                print("5명 이상")
+                let cell = tableView.dequeueReusableCell(withIdentifier: FiveMoreTableViewCell.identifier, for: indexPath) as! FiveMoreTableViewCell
+                cell.config(row: row)
+                cell.firstProfileImageView.layer.cornerRadius = (cellHeight - 52) / 2
+                cell.secondProfileImageView.layer.cornerRadius = (cellHeight - 52) / 2
+                cell.thirdProfileImageView.layer.cornerRadius = (cellHeight - 52) / 2
+                cell.fourthProfileImageView.layer.cornerRadius = (cellHeight - 52) / 2
+                return cell
+            default :
+                print("디폴트")
+                let cell = tableView.dequeueReusableCell(withIdentifier: SingleChattingListTableViewCell.identifier, for: indexPath) as! SingleChattingListTableViewCell
+                cell.config(row: row)
+                cell.profileImage.layer.cornerRadius = (cellHeight - 24) / 2
+                return cell
+            }
+
         }
+        
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -84,7 +151,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = storyboard?.instantiateViewController(identifier: "ChattingViewController") as! ChattingViewController
-        vc.chatRoom = chattingList[indexPath.row]
+        vc.chatRoom = searchBar.searchTextField.isEditing ? searchingResult[indexPath.row] : chattingList[indexPath.row]
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
@@ -110,6 +177,10 @@ extension ViewController: UISearchBarDelegate {
             attributes: [.foregroundColor : UIColor.secondaryLabel])
         searchBar.layer.borderColor = borderColor
         searchBar.layer.borderWidth = 1
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        searchingKeyword(targetList: mockChatList, forWhat: searchText)
     }
 }
 
