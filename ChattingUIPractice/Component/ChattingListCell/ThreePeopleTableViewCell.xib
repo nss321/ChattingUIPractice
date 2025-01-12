@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23077.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23068.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="112" id="vIe-sD-YRm" customClass="ThreePeopleTableViewCell" customModule="ChattingUIPractice" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="374" height="80"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vIe-sD-YRm" id="ehJ-Bk-E2M">
+                <rect key="frame" x="0.0" y="0.0" width="374" height="80"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QrI-Zi-kWk">
+                        <rect key="frame" x="12" y="12" width="36" height="36"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="QrI-Zi-kWk" secondAttribute="height" multiplier="1:1" id="1GX-oc-wqx"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="253" verticalHuggingPriority="251" text="24.01.12" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nB2-FG-gug">
+                        <rect key="frame" x="311.66666666666669" y="21.666666666666668" width="46.333333333333314" height="14.666666666666675"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" systemColor="tertiaryLabelColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="ㅂㅂㅂㅂㅂㅂㅂㅂㅂㅂㅂㅂㅂㅂㅂㅂㅂㅂㅂㅂㅂㅂㅂㅂㅂㅂㅂㅂㅂㅂㅂㅂㅂㅂㅂㅂㅂㅂㅂㅂㅂㅂㅂㅂㅂㅂㅂㅂ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="biR-vA-VEk">
+                        <rect key="frame" x="77.999999999999986" y="19" width="233.66666666666663" height="19.999999999999993"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="cfd-Fc-2Xz"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oTc-Vg-UBA">
+                        <rect key="frame" x="30" y="32" width="36" height="36"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="oTc-Vg-UBA" secondAttribute="height" multiplier="1:1" id="Nip-RS-3O0"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="왜요? 요즘 코딩이 대세인데" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JDa-fS-XBM">
+                        <rect key="frame" x="78" y="43" width="280" height="19.999999999999993"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="xbm-2P-wHt"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" systemColor="secondaryLabelColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="oTc-Vg-UBA" firstAttribute="leading" secondItem="QrI-Zi-kWk" secondAttribute="leading" multiplier="2.5" id="AHb-s3-GCC"/>
+                    <constraint firstItem="nB2-FG-gug" firstAttribute="leading" secondItem="biR-vA-VEk" secondAttribute="trailing" id="Js1-h4-By8"/>
+                    <constraint firstItem="oTc-Vg-UBA" firstAttribute="centerY" secondItem="ehJ-Bk-E2M" secondAttribute="centerY" multiplier="1.25" id="Mg9-Ed-h8m"/>
+                    <constraint firstAttribute="trailing" secondItem="JDa-fS-XBM" secondAttribute="trailing" constant="16" id="OyB-KJ-TIq"/>
+                    <constraint firstItem="JDa-fS-XBM" firstAttribute="leading" secondItem="oTc-Vg-UBA" secondAttribute="trailing" constant="12" id="Rjo-81-Io8"/>
+                    <constraint firstItem="QrI-Zi-kWk" firstAttribute="centerY" secondItem="ehJ-Bk-E2M" secondAttribute="centerY" multiplier="0.75" id="YfL-ID-7fK"/>
+                    <constraint firstItem="QrI-Zi-kWk" firstAttribute="leading" secondItem="ehJ-Bk-E2M" secondAttribute="leading" constant="12" id="fif-Nf-bE6"/>
+                    <constraint firstItem="biR-vA-VEk" firstAttribute="top" secondItem="ehJ-Bk-E2M" secondAttribute="topMargin" constant="8" id="ocS-8k-fL0"/>
+                    <constraint firstAttribute="bottom" secondItem="oTc-Vg-UBA" secondAttribute="bottom" constant="12" id="qHe-DL-8z9"/>
+                    <constraint firstItem="QrI-Zi-kWk" firstAttribute="top" secondItem="ehJ-Bk-E2M" secondAttribute="top" constant="12" id="s1k-OZ-9vZ"/>
+                    <constraint firstAttribute="trailing" secondItem="nB2-FG-gug" secondAttribute="trailing" constant="16" id="v9B-YW-wQN"/>
+                    <constraint firstItem="JDa-fS-XBM" firstAttribute="top" secondItem="biR-vA-VEk" secondAttribute="bottom" constant="4" id="vNE-Nf-1Nm"/>
+                    <constraint firstItem="biR-vA-VEk" firstAttribute="leading" secondItem="oTc-Vg-UBA" secondAttribute="trailing" constant="12" id="vnE-a4-jWb"/>
+                    <constraint firstItem="nB2-FG-gug" firstAttribute="centerY" secondItem="biR-vA-VEk" secondAttribute="centerY" id="wiN-ys-HuJ"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="1eY-ga-Ppb"/>
+            <connections>
+                <outlet property="chatRoomNameLabel" destination="biR-vA-VEk" id="QRr-En-KVE"/>
+                <outlet property="dateLabel" destination="nB2-FG-gug" id="ndl-qi-zsN"/>
+                <outlet property="firstProfileImageView" destination="QrI-Zi-kWk" id="rW0-Sr-MMM"/>
+                <outlet property="latestMessageLabel" destination="JDa-fS-XBM" id="Jni-Rx-0sB"/>
+                <outlet property="secondProfileImageView" destination="oTc-Vg-UBA" id="MYr-Xq-mUK"/>
+            </connections>
+            <point key="canvasLocation" x="190.83969465648855" y="66.197183098591552"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <systemColor name="secondaryLabelColor">
+            <color red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="tertiaryLabelColor">
+            <color red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.29803921570000003" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

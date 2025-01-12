@@ -23,7 +23,7 @@ final class SingleChattingListTableViewCell: UITableViewCell, ReusableViewProtoc
 
     func setupCell() {
         profileImage.clipsToBounds = true
-        profileImage.contentMode = .scaleAspectFill
+        profileImage.contentMode = .scaleToFill
     }
     
     func config(row: ChatRoom) {

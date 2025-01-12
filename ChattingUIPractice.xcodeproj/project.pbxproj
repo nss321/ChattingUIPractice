@@ -24,6 +24,12 @@
 		11B76E6F2D33A8BE00BCE282 /* ReusableViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B76E6E2D33A8B800BCE282 /* ReusableViewProtocol.swift */; };
 		11B76E762D33B15700BCE282 /* MyChatBubbleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B76E742D33B15700BCE282 /* MyChatBubbleTableViewCell.swift */; };
 		11B76E772D33B15700BCE282 /* MyChatBubbleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11B76E752D33B15700BCE282 /* MyChatBubbleTableViewCell.xib */; };
+		11B76E7A2D33BD0700BCE282 /* ThreePeopleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B76E782D33BD0700BCE282 /* ThreePeopleTableViewCell.swift */; };
+		11B76E7B2D33BD0700BCE282 /* ThreePeopleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11B76E792D33BD0700BCE282 /* ThreePeopleTableViewCell.xib */; };
+		11B76E7E2D33BD1600BCE282 /* FourPeopleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B76E7C2D33BD1600BCE282 /* FourPeopleTableViewCell.swift */; };
+		11B76E7F2D33BD1600BCE282 /* FourPeopleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11B76E7D2D33BD1600BCE282 /* FourPeopleTableViewCell.xib */; };
+		11B76E822D33BD2E00BCE282 /* FiveMoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B76E802D33BD2E00BCE282 /* FiveMoreTableViewCell.swift */; };
+		11B76E832D33BD2E00BCE282 /* FiveMoreTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11B76E812D33BD2E00BCE282 /* FiveMoreTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +52,12 @@
 		11B76E6E2D33A8B800BCE282 /* ReusableViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableViewProtocol.swift; sourceTree = "<group>"; };
 		11B76E742D33B15700BCE282 /* MyChatBubbleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyChatBubbleTableViewCell.swift; sourceTree = "<group>"; };
 		11B76E752D33B15700BCE282 /* MyChatBubbleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyChatBubbleTableViewCell.xib; sourceTree = "<group>"; };
+		11B76E782D33BD0700BCE282 /* ThreePeopleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreePeopleTableViewCell.swift; sourceTree = "<group>"; };
+		11B76E792D33BD0700BCE282 /* ThreePeopleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ThreePeopleTableViewCell.xib; sourceTree = "<group>"; };
+		11B76E7C2D33BD1600BCE282 /* FourPeopleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourPeopleTableViewCell.swift; sourceTree = "<group>"; };
+		11B76E7D2D33BD1600BCE282 /* FourPeopleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FourPeopleTableViewCell.xib; sourceTree = "<group>"; };
+		11B76E802D33BD2E00BCE282 /* FiveMoreTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiveMoreTableViewCell.swift; sourceTree = "<group>"; };
+		11B76E812D33BD2E00BCE282 /* FiveMoreTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FiveMoreTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,12 +109,8 @@
 		115BE0402D328AA000173E73 /* Component */ = {
 			isa = PBXGroup;
 			children = (
-				115BE03B2D326DFB00173E73 /* SingleChattingListTableViewCell.xib */,
-				115BE03A2D326DFB00173E73 /* SingleChattingListTableViewCell.swift */,
-				115BE0442D328D0800173E73 /* OthersChatBubbleTableViewCell.swift */,
-				115BE0452D328D0800173E73 /* OthersChatBubbleTableViewCell.xib */,
-				11B76E742D33B15700BCE282 /* MyChatBubbleTableViewCell.swift */,
-				11B76E752D33B15700BCE282 /* MyChatBubbleTableViewCell.xib */,
+				11B76E852D33BD5100BCE282 /* ChattingBubbleCell */,
+				11B76E842D33BD3300BCE282 /* ChattingListCell */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -130,6 +138,32 @@
 				115BE0492D328D2A00173E73 /* ChattingViewController.swift */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		11B76E842D33BD3300BCE282 /* ChattingListCell */ = {
+			isa = PBXGroup;
+			children = (
+				115BE03B2D326DFB00173E73 /* SingleChattingListTableViewCell.xib */,
+				115BE03A2D326DFB00173E73 /* SingleChattingListTableViewCell.swift */,
+				11B76E782D33BD0700BCE282 /* ThreePeopleTableViewCell.swift */,
+				11B76E792D33BD0700BCE282 /* ThreePeopleTableViewCell.xib */,
+				11B76E7C2D33BD1600BCE282 /* FourPeopleTableViewCell.swift */,
+				11B76E7D2D33BD1600BCE282 /* FourPeopleTableViewCell.xib */,
+				11B76E802D33BD2E00BCE282 /* FiveMoreTableViewCell.swift */,
+				11B76E812D33BD2E00BCE282 /* FiveMoreTableViewCell.xib */,
+			);
+			path = ChattingListCell;
+			sourceTree = "<group>";
+		};
+		11B76E852D33BD5100BCE282 /* ChattingBubbleCell */ = {
+			isa = PBXGroup;
+			children = (
+				115BE0442D328D0800173E73 /* OthersChatBubbleTableViewCell.swift */,
+				115BE0452D328D0800173E73 /* OthersChatBubbleTableViewCell.xib */,
+				11B76E742D33B15700BCE282 /* MyChatBubbleTableViewCell.swift */,
+				11B76E752D33B15700BCE282 /* MyChatBubbleTableViewCell.xib */,
+			);
+			path = ChattingBubbleCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -190,11 +224,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11B76E7F2D33BD1600BCE282 /* FourPeopleTableViewCell.xib in Resources */,
 				115BE02E2D326D0B00173E73 /* Assets.xcassets in Resources */,
+				11B76E832D33BD2E00BCE282 /* FiveMoreTableViewCell.xib in Resources */,
 				115BE0312D326D0B00173E73 /* Base in Resources */,
 				115BE02C2D326D0A00173E73 /* Base in Resources */,
 				115BE0472D328D0800173E73 /* OthersChatBubbleTableViewCell.xib in Resources */,
 				115BE03D2D326DFB00173E73 /* SingleChattingListTableViewCell.xib in Resources */,
+				11B76E7B2D33BD0700BCE282 /* ThreePeopleTableViewCell.xib in Resources */,
 				11B76E772D33B15700BCE282 /* MyChatBubbleTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -206,9 +243,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11B76E822D33BD2E00BCE282 /* FiveMoreTableViewCell.swift in Sources */,
 				115BE0292D326D0A00173E73 /* ViewController.swift in Sources */,
+				11B76E7A2D33BD0700BCE282 /* ThreePeopleTableViewCell.swift in Sources */,
 				115BE0462D328D0800173E73 /* OthersChatBubbleTableViewCell.swift in Sources */,
 				115BE0392D326D4D00173E73 /* ChattingData.swift in Sources */,
+				11B76E7E2D33BD1600BCE282 /* FourPeopleTableViewCell.swift in Sources */,
 				11B76E6D2D33A43300BCE282 /* ViewPresenstableProtocol.swift in Sources */,
 				115BE0252D326D0A00173E73 /* AppDelegate.swift in Sources */,
 				11B76E762D33B15700BCE282 /* MyChatBubbleTableViewCell.swift in Sources */,
