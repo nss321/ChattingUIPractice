@@ -86,6 +86,14 @@ final class ChattingViewController: UIViewController, ViewPresenstableProtocol {
         configNavigationBar()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        print(#function)
+                tableView.scrollToRow(at: IndexPath(row: chatRoom.chatList.count - 1, section: 0), at: .bottom, animated: true)
+    }
+    override func viewDidLayoutSubviews() {
+        print(#function)
+    }
+    
     func configNavigationBar() {
         let buttonImage = UIImage(systemName: "chevron.left")?.withTintColor(.black, renderingMode: .alwaysOriginal)
         self.navigationItem.title = chatRoom.chatroomName
@@ -134,13 +142,16 @@ extension ChattingViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let row = chatRoom.chatList[indexPath.row]
+        print(#function, indexPath.row)
         
         if lastDay == chatRoom.chatList.last?.date {
             lastDay = "2000-01-01 00:00"
+            print("reset lastDay")
         }
         
         if DateFormatManager.shared.isNewDay(lastDay, row.date) {
             lastDay = row.date
+            print("updated lastDay: \(row.date) ")
             switch row.user {
             case .user:
                 let cell = tableView.dequeueReusableCell(withIdentifier: MyDateSeparatorTableViewCell.identifier, for: indexPath) as! MyDateSeparatorTableViewCell
@@ -195,6 +206,8 @@ extension ChattingViewController: UITableViewDelegate, UITableViewDataSource {
         } else {
         }
         
-        tableView.scrollToRow(at: IndexPath(row: chatRoom.chatList.count - 1, section: 0), at: .bottom, animated: true)
+        // MARK: 이 방식으로 하단 스크롤 시 cell을 가장 아래부터 만들게 됩니다. 그러다보니 맨 위 메시지에는 시간 구분선이 나타나지 않는데, 어떤식으로 처리하면 좋을까요?
+        // MARK: viewDidAppear에서 호출하는걸로 해결했습니다 ^^~
+//        tableView.scrollToRow(at: IndexPath(row: chatRoom.chatList.count - 1, section: 0), at: .bottom, animated: true)
     }
 }
