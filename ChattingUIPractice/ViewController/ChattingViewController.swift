@@ -76,6 +76,8 @@ final class ChattingViewController: UIViewController, ViewPresenstableProtocol {
     @IBOutlet var tableView: UITableView!
     @IBOutlet var textField: UITextField!
     
+    
+    // MARK: viewDIdLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         failureLabel.isHidden = true
@@ -123,6 +125,8 @@ final class ChattingViewController: UIViewController, ViewPresenstableProtocol {
     }
 }
 
+
+// MARK: TableView Delegate
 extension ChattingViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         chatRoom.chatList.count
@@ -130,6 +134,10 @@ extension ChattingViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let row = chatRoom.chatList[indexPath.row]
+        
+        if lastDay == chatRoom.chatList.last?.date {
+            lastDay = "2000-01-01 00:00"
+        }
         
         if DateFormatManager.shared.isNewDay(lastDay, row.date) {
             lastDay = row.date
@@ -162,6 +170,9 @@ extension ChattingViewController: UITableViewDelegate, UITableViewDataSource {
         UITableView.automaticDimension
     }
     
+    
+    
+    
     func configTableView() {
         tableView.delegate = self
         tableView.dataSource = self
@@ -183,5 +194,7 @@ extension ChattingViewController: UITableViewDelegate, UITableViewDataSource {
             textField.isEnabled = false
         } else {
         }
+        
+        tableView.scrollToRow(at: IndexPath(row: chatRoom.chatList.count - 1, section: 0), at: .bottom, animated: true)
     }
 }
