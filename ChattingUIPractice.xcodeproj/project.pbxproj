@@ -30,6 +30,10 @@
 		11B76E7F2D33BD1600BCE282 /* FourPeopleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11B76E7D2D33BD1600BCE282 /* FourPeopleTableViewCell.xib */; };
 		11B76E822D33BD2E00BCE282 /* FiveMoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B76E802D33BD2E00BCE282 /* FiveMoreTableViewCell.swift */; };
 		11B76E832D33BD2E00BCE282 /* FiveMoreTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11B76E812D33BD2E00BCE282 /* FiveMoreTableViewCell.xib */; };
+		11B76E892D33ED0500BCE282 /* OtherDateSeparatorTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11B76E882D33ED0500BCE282 /* OtherDateSeparatorTableViewCell.xib */; };
+		11B76E8A2D33ED0500BCE282 /* OtherDateSeparatorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B76E872D33ED0500BCE282 /* OtherDateSeparatorTableViewCell.swift */; };
+		11B76E8D2D33FDFD00BCE282 /* MyDateSeparatorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B76E8B2D33FDFD00BCE282 /* MyDateSeparatorTableViewCell.swift */; };
+		11B76E8E2D33FDFD00BCE282 /* MyDateSeparatorTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11B76E8C2D33FDFD00BCE282 /* MyDateSeparatorTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +62,10 @@
 		11B76E7D2D33BD1600BCE282 /* FourPeopleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FourPeopleTableViewCell.xib; sourceTree = "<group>"; };
 		11B76E802D33BD2E00BCE282 /* FiveMoreTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiveMoreTableViewCell.swift; sourceTree = "<group>"; };
 		11B76E812D33BD2E00BCE282 /* FiveMoreTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FiveMoreTableViewCell.xib; sourceTree = "<group>"; };
+		11B76E872D33ED0500BCE282 /* OtherDateSeparatorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherDateSeparatorTableViewCell.swift; sourceTree = "<group>"; };
+		11B76E882D33ED0500BCE282 /* OtherDateSeparatorTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OtherDateSeparatorTableViewCell.xib; sourceTree = "<group>"; };
+		11B76E8B2D33FDFD00BCE282 /* MyDateSeparatorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDateSeparatorTableViewCell.swift; sourceTree = "<group>"; };
+		11B76E8C2D33FDFD00BCE282 /* MyDateSeparatorTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyDateSeparatorTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +117,7 @@
 		115BE0402D328AA000173E73 /* Component */ = {
 			isa = PBXGroup;
 			children = (
+				11B76E862D33ECEE00BCE282 /* DateSeparator */,
 				11B76E852D33BD5100BCE282 /* ChattingBubbleCell */,
 				11B76E842D33BD3300BCE282 /* ChattingListCell */,
 			);
@@ -164,6 +173,17 @@
 				11B76E752D33B15700BCE282 /* MyChatBubbleTableViewCell.xib */,
 			);
 			path = ChattingBubbleCell;
+			sourceTree = "<group>";
+		};
+		11B76E862D33ECEE00BCE282 /* DateSeparator */ = {
+			isa = PBXGroup;
+			children = (
+				11B76E872D33ED0500BCE282 /* OtherDateSeparatorTableViewCell.swift */,
+				11B76E882D33ED0500BCE282 /* OtherDateSeparatorTableViewCell.xib */,
+				11B76E8B2D33FDFD00BCE282 /* MyDateSeparatorTableViewCell.swift */,
+				11B76E8C2D33FDFD00BCE282 /* MyDateSeparatorTableViewCell.xib */,
+			);
+			path = DateSeparator;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,8 +251,10 @@
 				115BE02C2D326D0A00173E73 /* Base in Resources */,
 				115BE0472D328D0800173E73 /* OthersChatBubbleTableViewCell.xib in Resources */,
 				115BE03D2D326DFB00173E73 /* SingleChattingListTableViewCell.xib in Resources */,
+				11B76E892D33ED0500BCE282 /* OtherDateSeparatorTableViewCell.xib in Resources */,
 				11B76E7B2D33BD0700BCE282 /* ThreePeopleTableViewCell.xib in Resources */,
 				11B76E772D33B15700BCE282 /* MyChatBubbleTableViewCell.xib in Resources */,
+				11B76E8E2D33FDFD00BCE282 /* MyDateSeparatorTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,8 +271,10 @@
 				115BE0462D328D0800173E73 /* OthersChatBubbleTableViewCell.swift in Sources */,
 				115BE0392D326D4D00173E73 /* ChattingData.swift in Sources */,
 				11B76E7E2D33BD1600BCE282 /* FourPeopleTableViewCell.swift in Sources */,
+				11B76E8A2D33ED0500BCE282 /* OtherDateSeparatorTableViewCell.swift in Sources */,
 				11B76E6D2D33A43300BCE282 /* ViewPresenstableProtocol.swift in Sources */,
 				115BE0252D326D0A00173E73 /* AppDelegate.swift in Sources */,
+				11B76E8D2D33FDFD00BCE282 /* MyDateSeparatorTableViewCell.swift in Sources */,
 				11B76E762D33B15700BCE282 /* MyChatBubbleTableViewCell.swift in Sources */,
 				115BE04A2D328D2A00173E73 /* ChattingViewController.swift in Sources */,
 				115BE03C2D326DFB00173E73 /* SingleChattingListTableViewCell.swift in Sources */,

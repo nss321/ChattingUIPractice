@@ -60,6 +60,18 @@ final class ChattingViewController: UIViewController, ViewPresenstableProtocol {
         }
     }
     
+    var dateSeparator: [String] {
+        var separator: [String] = []
+        
+        chatRoom.chatList.forEach {
+            separator.append($0.date)
+        }
+        
+        return separator
+    }
+    
+    var lastDay = "2000-01-01 00:00"
+    
     @IBOutlet var failureLabel: UILabel!
     @IBOutlet var tableView: UITableView!
     @IBOutlet var textField: UITextField!
@@ -119,17 +131,31 @@ extension ChattingViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let row = chatRoom.chatList[indexPath.row]
         
-        switch row.user {
-        case .user:
-            let cell = tableView.dequeueReusableCell(withIdentifier: MyChatBubbleTableViewCell.identifier, for: indexPath) as! MyChatBubbleTableViewCell
-            cell.config(row: row)
-            return cell
-        default:
-            let cell = tableView.dequeueReusableCell(withIdentifier: OthersChatBubbleTableViewCell.identifier, for: indexPath) as! OthersChatBubbleTableViewCell
-            cell.config(row: row)
-            return cell
+        if DateFormatManager.shared.isNewDay(lastDay, row.date) {
+            lastDay = row.date
+            switch row.user {
+            case .user:
+                let cell = tableView.dequeueReusableCell(withIdentifier: MyDateSeparatorTableViewCell.identifier, for: indexPath) as! MyDateSeparatorTableViewCell
+                cell.config(row: row)
+                return cell
+            default:
+                let cell = tableView.dequeueReusableCell(withIdentifier: OtherDateSeparatorTableViewCell.identifier, for: indexPath) as! OtherDateSeparatorTableViewCell
+                cell.config(row: row)
+                return cell
+            }
+        } else {
+            let row = chatRoom.chatList[indexPath.row]
+            switch row.user {
+            case .user:
+                let cell = tableView.dequeueReusableCell(withIdentifier: MyChatBubbleTableViewCell.identifier, for: indexPath) as! MyChatBubbleTableViewCell
+                cell.config(row: row)
+                return cell
+            default:
+                let cell = tableView.dequeueReusableCell(withIdentifier: OthersChatBubbleTableViewCell.identifier, for: indexPath) as! OthersChatBubbleTableViewCell
+                cell.config(row: row)
+                return cell
+            }
         }
-
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -142,6 +168,9 @@ extension ChattingViewController: UITableViewDelegate, UITableViewDataSource {
         tableView.separatorStyle = .none
         tableView.register(UINib(nibName: OthersChatBubbleTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: OthersChatBubbleTableViewCell.identifier)
         tableView.register(UINib(nibName: MyChatBubbleTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: MyChatBubbleTableViewCell.identifier)
+        tableView.register(UINib(nibName: OtherDateSeparatorTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: OtherDateSeparatorTableViewCell.identifier)
+        tableView.register(UINib(nibName: MyDateSeparatorTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: MyDateSeparatorTableViewCell.identifier)
+        
         if chatRoom.chatroomId == -1 {
             print(#function)
 //            let emptyLabel = UILabel()

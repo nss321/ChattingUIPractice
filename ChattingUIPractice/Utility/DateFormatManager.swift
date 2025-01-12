@@ -38,9 +38,16 @@ class DateFormatManager {
         return dateFormatter
     }()
     
+    private let convertToSeparatorDate: DateFormatter = {
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "ko_KR")
+        dateFormatter.dateFormat = "yyyy년 M월 d일 EEEE"
+        return dateFormatter
+    }()
+    
     func convertChatdateToDisplaydate(date: String) -> String {
         guard let rawDate = converChatDate.date(from: date) else {
-            print("날짜 변환 실패")
+            print(#function, "날짜 변환 실패")
             return "00.00.00"
         }
         return convertToDisplayDate.string(from: rawDate)
@@ -48,9 +55,38 @@ class DateFormatManager {
     
     func convertChatdateToTime(date: String) -> String {
         guard let rawDate = converChatDate.date(from: date) else {
-            print("시간 변환 실패")
+            print(#function, "시간 변환 실패")
             return "00:00 오전"
         }
         return convertToTime.string(from: rawDate)
+    }
+    
+    func converToChatToSeparatorDate(date: String) -> String {
+        guard let rawDate = converChatDate.date(from: date) else {
+            print(#function, "구분선 날짜 변환 실패")
+            return "0000년 0월 0알 0요일"
+        }
+        return convertToSeparatorDate.string(from: rawDate)
+    }
+    
+    func isNewDay(_ last: String, _ current: String) -> Bool {
+        guard let last = converChatDate.date(from: last) else {
+            print(#function, "이전 날짜 변환 실패")
+            return false
+        }
+        guard let current = converChatDate.date(from: current) else {
+            print(#function, "현재 날짜 변환 실패")
+            return false
+        }
+        
+        let lastDate = Calendar.current.dateComponents([.year,.month, .day], from: last)
+        let currentDate = Calendar.current.dateComponents([.year, .month, .day], from: current)
+
+        if lastDate.day! != currentDate.day! {
+            return true
+        } else {
+            return false
+        }
+        
     }
 }
