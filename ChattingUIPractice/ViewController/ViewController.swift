@@ -26,7 +26,7 @@ class ViewController: UIViewController, ViewPresenstableProtocol {
         super.viewDidLoad()
         configTableView()
         configSearchBar()
-        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard)))
+//        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard)))
     }
     
     func searchingKeyword(targetList list: [ChatRoom], forWhat item: String) {
@@ -187,7 +187,11 @@ extension ViewController: UISearchBarDelegate {
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        searchingKeyword(targetList: mockChatList, forWhat: searchText)
+        if searchText.isEmpty {
+            searchingResult = mockChatList
+        } else {
+            searchingKeyword(targetList: mockChatList, forWhat: searchText)
+        }
     }
     
     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
