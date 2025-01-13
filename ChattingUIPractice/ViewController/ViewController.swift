@@ -6,11 +6,18 @@
 //
 
 import UIKit
+import SnapKit
+import Then
 
 class ViewController: UIViewController, ViewPresenstableProtocol {
     
     @IBOutlet var searchBar: UISearchBar!
     @IBOutlet var tableView: UITableView!
+    lazy var dim = UIView().then {
+        $0.backgroundColor = .black.withAlphaComponent(0.3)
+        $0.isHidden = true
+        $0.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard)))
+    }
     
     let chattingList = mockChatList
     
@@ -26,7 +33,7 @@ class ViewController: UIViewController, ViewPresenstableProtocol {
         super.viewDidLoad()
         configTableView()
         configSearchBar()
-//        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard)))
+        setConstraints()
     }
     
     func searchingKeyword(targetList list: [ChatRoom], forWhat item: String) {
@@ -42,6 +49,18 @@ class ViewController: UIViewController, ViewPresenstableProtocol {
     
     @objc func dismissKeyboard(_ sender: UITapGestureRecognizer) {
         view.endEditing(true)
+    }
+    
+    func setConstraints() {
+        view.addSubview(dim)
+        dim.snp.makeConstraints {
+            $0.top.equalTo(searchBar.snp.bottom)
+            $0.leading.trailing.bottom.equalToSuperview()
+        }
+    }
+    
+    func toggleDimWhenKeyboardShowing() {
+        dim.isHidden.toggle()
     }
 }
 
@@ -194,22 +213,27 @@ extension ViewController: UISearchBarDelegate {
         }
     }
     
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        toggleDimWhenKeyboardShowing()
+    }
+    
     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        toggleDimWhenKeyboardShowing()
         view.endEditing(true)
-        if searchingResult.isEmpty {
-            print("검색결과 없음")
-        }
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
+        view.endEditing(true)
+        
         print("return key")
         
-        guard let currentText = searchBar.text else {
+        guard let currentText = searchBar.searchTextField.text else {
             print("failed to unwrapping searchbar text")
             return
         }
         
+        print(currentText)
         if currentText.isEmpty {
             showSimpleAlert(title: "공백 입력!", message: "검색창이 공백입니당다리") { _ in
                 self.resetSearchBarState()

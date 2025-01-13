@@ -35,6 +35,8 @@
 		11B76E8D2D33FDFD00BCE282 /* MyDateSeparatorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B76E8B2D33FDFD00BCE282 /* MyDateSeparatorTableViewCell.swift */; };
 		11B76E8E2D33FDFD00BCE282 /* MyDateSeparatorTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11B76E8C2D33FDFD00BCE282 /* MyDateSeparatorTableViewCell.xib */; };
 		11B76E912D34843200BCE282 /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B76E902D34843000BCE282 /* UIViewController+.swift */; };
+		11B76EC32D34BA7A00BCE282 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 11B76EC22D34BA7A00BCE282 /* SnapKit */; };
+		11B76EC62D34BA8300BCE282 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 11B76EC52D34BA8300BCE282 /* Then */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -75,6 +77,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11B76EC32D34BA7A00BCE282 /* SnapKit in Frameworks */,
+				11B76EC62D34BA8300BCE282 /* Then in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -213,6 +217,10 @@
 			dependencies = (
 			);
 			name = ChattingUIPractice;
+			packageProductDependencies = (
+				11B76EC22D34BA7A00BCE282 /* SnapKit */,
+				11B76EC52D34BA8300BCE282 /* Then */,
+			);
 			productName = ChattingUIPractice;
 			productReference = 115BE0212D326D0A00173E73 /* ChattingUIPractice.app */;
 			productType = "com.apple.product-type.application";
@@ -241,6 +249,10 @@
 				Base,
 			);
 			mainGroup = 115BE0182D326D0A00173E73;
+			packageReferences = (
+				11B76EC12D34BA7A00BCE282 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				11B76EC42D34BA8300BCE282 /* XCRemoteSwiftPackageReference "Then" */,
+			);
 			productRefGroup = 115BE0222D326D0A00173E73 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -525,6 +537,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		11B76EC12D34BA7A00BCE282 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.1;
+			};
+		};
+		11B76EC42D34BA8300BCE282 /* XCRemoteSwiftPackageReference "Then" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/devxoul/Then";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		11B76EC22D34BA7A00BCE282 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 11B76EC12D34BA7A00BCE282 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		11B76EC52D34BA8300BCE282 /* Then */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 11B76EC42D34BA8300BCE282 /* XCRemoteSwiftPackageReference "Then" */;
+			productName = Then;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 115BE0192D326D0A00173E73 /* Project object */;
 }
