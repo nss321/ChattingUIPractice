@@ -34,6 +34,7 @@
 		11B76E8A2D33ED0500BCE282 /* OtherDateSeparatorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B76E872D33ED0500BCE282 /* OtherDateSeparatorTableViewCell.swift */; };
 		11B76E8D2D33FDFD00BCE282 /* MyDateSeparatorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B76E8B2D33FDFD00BCE282 /* MyDateSeparatorTableViewCell.swift */; };
 		11B76E8E2D33FDFD00BCE282 /* MyDateSeparatorTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11B76E8C2D33FDFD00BCE282 /* MyDateSeparatorTableViewCell.xib */; };
+		11B76E912D34843200BCE282 /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B76E902D34843000BCE282 /* UIViewController+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +67,7 @@
 		11B76E882D33ED0500BCE282 /* OtherDateSeparatorTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OtherDateSeparatorTableViewCell.xib; sourceTree = "<group>"; };
 		11B76E8B2D33FDFD00BCE282 /* MyDateSeparatorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDateSeparatorTableViewCell.swift; sourceTree = "<group>"; };
 		11B76E8C2D33FDFD00BCE282 /* MyDateSeparatorTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyDateSeparatorTableViewCell.xib; sourceTree = "<group>"; };
+		11B76E902D34843000BCE282 /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 		115BE0232D326D0A00173E73 /* ChattingUIPractice */ = {
 			isa = PBXGroup;
 			children = (
+				11B76E8F2D34842900BCE282 /* Extension */,
 				11B76E6E2D33A8B800BCE282 /* ReusableViewProtocol.swift */,
 				11B76E6C2D33A42A00BCE282 /* ViewPresenstableProtocol.swift */,
 				115BE0432D328C9D00173E73 /* ViewController */,
@@ -184,6 +187,14 @@
 				11B76E8C2D33FDFD00BCE282 /* MyDateSeparatorTableViewCell.xib */,
 			);
 			path = DateSeparator;
+			sourceTree = "<group>";
+		};
+		11B76E8F2D34842900BCE282 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				11B76E902D34843000BCE282 /* UIViewController+.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -276,6 +287,7 @@
 				115BE0252D326D0A00173E73 /* AppDelegate.swift in Sources */,
 				11B76E8D2D33FDFD00BCE282 /* MyDateSeparatorTableViewCell.swift in Sources */,
 				11B76E762D33B15700BCE282 /* MyChatBubbleTableViewCell.swift in Sources */,
+				11B76E912D34843200BCE282 /* UIViewController+.swift in Sources */,
 				115BE04A2D328D2A00173E73 /* ChattingViewController.swift in Sources */,
 				115BE03C2D326DFB00173E73 /* SingleChattingListTableViewCell.swift in Sources */,
 				11B76E6F2D33A8BE00BCE282 /* ReusableViewProtocol.swift in Sources */,

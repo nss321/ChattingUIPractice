@@ -26,6 +26,7 @@ class ViewController: UIViewController, ViewPresenstableProtocol {
         super.viewDidLoad()
         configTableView()
         configSearchBar()
+        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard)))
     }
     
     func searchingKeyword(targetList list: [ChatRoom], forWhat item: String) {
@@ -38,6 +39,10 @@ class ViewController: UIViewController, ViewPresenstableProtocol {
             }
         }
     }
+    
+    @objc func dismissKeyboard(_ sender: UITapGestureRecognizer) {
+        view.endEditing(true)
+    }
 }
 
 // MARK: TableView Delegate
@@ -49,6 +54,8 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var row = chattingList[indexPath.row]
         
+        
+        // MARK: 추상화,,를하든 뭘하든 리팩토링 필요해보임.
         if searchBar.searchTextField.isEditing {
             row = searchingResult[indexPath.row]
             switch row.chatroomImage.count {
@@ -182,5 +189,44 @@ extension ViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         searchingKeyword(targetList: mockChatList, forWhat: searchText)
     }
+    
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        view.endEditing(true)
+        if searchingResult.isEmpty {
+            print("검색결과 없음")
+        }
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+        print("return key")
+        
+        guard let currentText = searchBar.text else {
+            print("failed to unwrapping searchbar text")
+            return
+        }
+        
+        if currentText.isEmpty {
+            showSimpleAlert(title: "공백 입력!", message: "검색창이 공백입니당다리") { _ in
+                self.resetSearchBarState()
+            }
+            resetSearchBarState()
+            
+        } else if searchingResult.isEmpty {
+            showSimpleAlert(title: "검색 결과 없음", message: "찾으시는 결과를 찾을 수 없어요 ;<") { _ in
+                self.resetSearchBarState()
+            }
+            resetSearchBarState()
+        }
+        
+    }
+    
+    func resetSearchBarState() {
+        view.endEditing(true)
+        searchBar.searchTextField.text = ""
+        tableView.reloadData()
+    }
+    
+
 }
 
